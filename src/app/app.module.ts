@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { TodoTaskComponent } from './shared/components/todo-task/todo-task.component';
 import { StudentTaskComponent } from './shared/components/student-task/student-task.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { StudentTaskComponent } from './shared/components/student-task/student-t
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

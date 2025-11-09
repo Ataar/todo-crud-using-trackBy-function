@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { log } from 'console';
 import { Istd } from 'src/app/modules/todoLists';
 
@@ -38,7 +39,7 @@ return value.toString(16);
 
 
  
-  constructor() { }
+  constructor(private snackbar:MatSnackBar) { }
   ngOnInit(): void {
   }
 
@@ -53,7 +54,16 @@ return value.toString(16);
     }
       console.log(stdObj);
       this.stdArr.push(stdObj)
-      
+      this.snackbar.open('Successfully Added', 'Clos',{
+        horizontalPosition:'center',
+        verticalPosition:'top',
+         duration: 1000
+      })
+      this.fRef.nativeElement.value = '',
+      this.lRef.nativeElement.value = '',
+      this.eRef.nativeElement.value = '',
+      this.cRef.nativeElement.value = ''
+
    }
 
    onEdit(stdVal:Istd)
@@ -92,8 +102,17 @@ return value.toString(16);
           let upStd = this.stdArr.findIndex(std=>std.stdId===std_updatedId)
           console.log(upStd);
 
+          this.fRef.nativeElement.value = '',
+          this.lRef.nativeElement.value = '',
+          this.eRef.nativeElement.value = '',
+          this.cRef.nativeElement.value = '',
+          this.isEdit = false
           this.stdArr[upStd] = updatedObj
-          
+              this.snackbar.open('Successfully Updated', 'Clos',{
+        horizontalPosition:'center',
+        verticalPosition:'top',
+         duration: 1000
+      })
         }     
    }
 
@@ -104,7 +123,21 @@ return value.toString(16);
        this.stdArr.splice(delStudent,1)
        
        console.log(stdDel);
-       
+           this.snackbar.open('Deleted Successfully', 'Clos',{
+        horizontalPosition:'center',
+        verticalPosition:'top',
+         duration: 1000
+      })
+   }
+
+   onCancel()
+   {
+      this.isEdit = true;
+        this.fRef.nativeElement.value = '',
+      this.lRef.nativeElement.value = '',
+      this.eRef.nativeElement.value = '',
+      this.cRef.nativeElement.value = '',
+      this.isEdit = false
    }
 
 }

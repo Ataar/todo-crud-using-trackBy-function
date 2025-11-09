@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Itodo } from 'src/app/modules/todoLists';
+import { Istd, Itodo } from 'src/app/modules/todoLists';
 
 @Component({
   selector: 'app-todo-task',
@@ -46,9 +46,9 @@ return value.toString(16);
         
       }
       this.todoArr.unshift(todoObj)
-      this.snackBar.open('Suceessfully Added' ,'close')
+      this.snackBar.open('Suceessfully Added' ,'close',{ duration: 1000})
        console.log(todoObj);
-       
+       todoInput.value = ''
      }
      
    }
@@ -76,7 +76,7 @@ this.todoRef.nativeElement.value = todoEdit.todoItem
 
       let index = this.todoArr.findIndex(add=>add.todoId===updated_Id)
       this.todoArr[index]=updated_Obj
-     this.snackBar.open('Suceessfully Updated' ,'close')
+     this.snackBar.open('Suceessfully Updated' ,'close', { duration: 1000})
    }
    todoUpdate.value = ''
    this.isEdit = false
@@ -87,8 +87,16 @@ this.editTodoId = ''
   {
   let index =this.todoArr.findIndex(todo => todo.todoId === todoId)
 this.todoArr.splice(index,1)
-  this.snackBar.open('Suceessfully Updated' ,'close')
+  this.snackBar.open('Deleted Suceessfully' ,'close', {duration: 1000})
   }
+   
+
+  onCancel()
+  {
+     this.todoRef.nativeElement.value = ''
+     this.isEdit= false
+    }
+    
 
 }
 
