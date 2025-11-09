@@ -63,7 +63,8 @@ ngOnInit(): void {
 addTodo(todoInput:HTMLInputElement)
 {
 if(todoInput.value.length>0){
-let todoObj:Itodo ={
+let todoObj:Itodo =
+{
 todoItem:todoInput.value,
 todoId:this.uuid()
  
@@ -133,10 +134,10 @@ console.log(REMOVE_ID)
 
 let index =this.todoArr.findIndex(todo => todo.todoId === REMOVE_ID)
 this.todoArr.splice(index,1)
-this._snackBar.open('✅ SuccessFully Deleted', 'close', {
+this._snackBar.open('SuccessFully Deleted', 'close', {
   horizontalPosition: 'center',
   verticalPosition: 'top',
-  duration: 3000  // 3 seconds (optional)
+  duration: 3000  
 });
 }
 

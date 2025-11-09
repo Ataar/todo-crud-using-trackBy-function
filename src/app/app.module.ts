@@ -6,12 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { TodoTaskComponent } from './shared/components/todo-task/todo-task.component';
+import { StudentTaskComponent } from './shared/components/student-task/student-task.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodolistsComponent
+    TodolistsComponent,
+    TodoTaskComponent,
+    StudentTaskComponent
   ],
   imports: [
     BrowserModule,
