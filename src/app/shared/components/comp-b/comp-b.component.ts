@@ -34,9 +34,9 @@ export class CompBComponent implements OnInit {
   @Input() data24!:ClassSchedule;
   @Input() data25!:EcommerceOrder;
 
+  @Input() messageB!:string;         // C componenet
 
   ngOnInit(): void {
   }
 
-  message:string = 'C componenet is In working' 
 }

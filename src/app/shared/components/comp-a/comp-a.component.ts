@@ -9,7 +9,7 @@ import { Admission, Cart, ClassSchedule, Conference, EcommerceOrder, Enrollment,
   styleUrls: ['./comp-a.component.scss']
 })
 export class CompAComponent implements OnInit {
-    message:string =  'Dynamic Data Showcase';
+    messageA!:string;
   // 1️⃣ Meeting
   // The meeting titled “Tech Strategy Discussion” is scheduled to be held on December 1, 2025, at 4:30 PM. It will take place in Conference Hall A located in Mumbai, where the company’s executives will gather to discuss strategic technology initiatives and future planning.
   meeting: IMeeting = {
