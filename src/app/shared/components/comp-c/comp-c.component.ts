@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./comp-c.component.scss']
 })
 export class CompCComponent implements OnInit {
-   @Input() message!:string
+   @Input() grandchild!:string
   constructor() { }
 
   ngOnInit(): void {
