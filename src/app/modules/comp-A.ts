@@ -38,6 +38,12 @@ export interface IEmployee {
 }
 
 export interface IBooking {
+published: any;
+copiesSold: any;
+setting: any;
+author: any;
+genre: any;
+book: any;
   passenger: {
     name: string;
     age: number;
